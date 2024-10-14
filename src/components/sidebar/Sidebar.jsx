@@ -63,7 +63,7 @@ const SidebarContainer = styled.div`
       overflow: hidden;
       z-index: 10;
       @media (max-width: 768px) {
-        width: ${(props) => (props.isOpen ? '22rem' : '0')};
+        width: ${(props) => (props.isOpen ? '25rem' : '0')};
     }
 
     `;
