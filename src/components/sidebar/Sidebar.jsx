@@ -62,6 +62,10 @@ const SidebarContainer = styled.div`
       transition: width 0.3s ease, padding 0.3s ease;
       overflow: hidden;
       z-index: 10;
+      @media (max-width: 768px) {
+        width: ${(props) => (props.isOpen ? '22rem' : '0')};
+    }
+
     `;
 
 const SidebarTop = styled.div`
