@@ -50,10 +50,14 @@ const Map = () => {
             .then(response => response.json())
             .then(data => {
                 setPlaces(data); // places 상태 업데이트
+                const positions = [] // 마커 위치를 저장할 배열
+
                 data.forEach(place => {
                     geocoder.addressSearch(place.address, (result, status) => {
                         if (status === kakao.maps.services.Status.OK) {
                             const position = new kakao.maps.LatLng(result[0].y, result[0].x);
+                            positions.push(position);
+
                             const imageSrc = areaImageMap[place.area] || 'default_marker.png';
                             const markerImage = new kakao.maps.MarkerImage(imageSrc, new kakao.maps.Size(25, 36.2));
 
@@ -75,7 +79,18 @@ const Map = () => {
                         }
                     });
                 });
+
+                // 모든 마커의 위치가 추가된 후, 중심 좌표 계산 및 지도 이동
+                if (positions.length > 0) {
+                    const averagePosition = positions.reduce((acc, curr) => {
+                        return new kakao.maps.LatLng((acc.getLat() + curr.getLat()) / 2, (acc.getLng() + curr.getLng()) / 2);
+                    });
+
+                    // 평균 위치로 지도 중심 이동
+                    map.setCenter(averagePosition);
+                }
             })
+
             .catch(error => console.error("장소 마커 추가 중 오류 발생:", error));
     };
 
