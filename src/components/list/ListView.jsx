@@ -11,7 +11,8 @@ const ListView = ({ setEndAddress, searchQuery }) => {
     useEffect(() => {
         const fetchPlaces = async () => {
             try {
-                const response = await fetch('/data/places.json');
+                // const response = await fetch('/data/places.json');
+                const response = await fetch('/data/places_copy.json');
                 if (!response.ok) {
                     throw new Error('네트워크 응답이 좋지 않습니다.');
                 }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Sidebar from '../components/sidebar/Sidebar';
 import InfoWindowContent from '../components/modal/InfoWindowContent';
+import CustomOverlayContent from '../components/modal/CustomOverlayMarker';
 
 // 마커 이미지
 import pink from '../assets/images/pink.png';
@@ -27,6 +28,7 @@ const Map = () => {
         '강원': pink, '경기': skyblue, '경남': yellow, '경북': blue, '광주': red, '대구': blue, '부산': yellow, '세종': green, '울산': yellow, '인천': skyblue, '전남': red, '전북': red, '충남': green, '충북': green
     };
 
+
     useEffect(() => {
         const container = document.getElementById('map');
         const options = {
@@ -43,10 +45,12 @@ const Map = () => {
         setGeocoder(newGeocoder);
     }, []);
 
+
     const addMarkersFromPlaces = () => {
         if (!geocoder || !map) return;
 
-        fetch('/data/places.json')
+        // fetch('/data/places.json')
+        fetch('/data/places_copy.json')
             .then(response => response.json())
             .then(data => {
                 setPlaces(data); // places 상태 업데이트
@@ -68,6 +72,50 @@ const Map = () => {
 
                             kakao.maps.event.addListener(marker, 'click', () => {
                                 setEndAddress(place.address);
+
+                                const additionalInfo = {
+                                    area: place.area,
+                                    title: place.title,
+                                    license: place.license,
+                                    photo: place.photo,
+                                    homePage: place.homePage,
+                                    address: place.address,
+                                    phone1: place.phone1,
+                                    phone2: place.phone2,
+                                    score: place.score,
+                                    funeralPrice5kg: place.funeralPrice5kg,
+                                    funeralPrice15kg: place.funeralPrice15kg,
+                                    funeralPrice1kg: place.funeralPrice1kg,
+                                    funeralPriceUrl: place.funeralPriceUrl,
+                                    funeralSupplies: place.funeralSupplies,
+                                    enshrinementPriceTag: place.enshrinementPriceTag,
+                                    memorialStone: place.memorialStone,
+                                    memorialStonePrice: place.memorialStonePrice,
+                                    review1: place.review1,
+                                    review2: place.review2,
+                                    review3: place.review3,
+                                    url: place.url,
+                                };
+
+                                // 커스텀 오버레이 생성
+                                const overlayContent = document.createElement('div');
+                                ReactDOM.render(
+                                    <CustomOverlayContent
+                                        additionalInfo={additionalInfo}
+                                    />,
+                                    overlayContent
+                                );
+
+                                const customOverlay = new kakao.maps.CustomOverlay({
+                                    position: marker.getPosition(),
+                                    content: overlayContent,
+                                    xAnchor: 0.5,
+                                    yAnchor: 1.3,
+                                    zIndex: 2,
+                                });
+
+                                customOverlay.setMap(map);
+                                setCurrentOverlay(customOverlay);
                                 alert(`도착지 위치가 "${place.title}"으로 선택되었습니다.`);
                             });
 
@@ -78,7 +126,6 @@ const Map = () => {
             })
             .catch(error => console.error("장소 마커 추가 중 오류 발생:", error));
     };
-
     useEffect(() => {
         if (map && geocoder) {
             addMarkersFromPlaces();
@@ -165,10 +212,27 @@ const Map = () => {
                                 // InfoWindowContent에 사용할 추가 정보 가져오기
                                 const selectedPlace = places.find(place => place.address === endAddress);
                                 const additionalInfo = {
+                                    area: selectedPlace?.area,
                                     title: selectedPlace?.title,
+                                    license: selectedPlace?.license,
+                                    photo: selectedPlace?.photo,
+                                    homePage: selectedPlace?.homePage,
                                     address: selectedPlace?.address,
-                                    info: selectedPlace?.info,
-                                    score: selectedPlace?.score
+                                    phone1: selectedPlace?.phone1,
+                                    phone2: selectedPlace?.phone2,
+                                    score: selectedPlace?.score,
+                                    funeralPrice5kg: selectedPlace?.funeralPrice5kg,
+                                    funeralPrice15kg: selectedPlace?.funeralPrice15kg,
+                                    funeralPrice1kg: selectedPlace?.funeralPrice1kg,
+                                    funeralPriceUrl: selectedPlace?.funeralPriceUrl,
+                                    funeralSupplies: selectedPlace?.funeralSupplies,
+                                    enshrinementPriceTag: selectedPlace?.enshrinementPriceTag,
+                                    memorialStone: selectedPlace?.memorialStone,
+                                    memorialStonePrice: selectedPlace?.memorialStonePrice,
+                                    review1: selectedPlace?.review1,
+                                    review2: selectedPlace?.review2,
+                                    review3: selectedPlace?.review3,
+                                    url: selectedPlace?.url,
                                 };
 
                                 const overlayContent = document.createElement('div');
@@ -211,9 +275,13 @@ const Map = () => {
         });
     };
 
+    const rearrangeMarker = () => {
+        window.location.reload();
+    };
+
     return (
         <>
-            <Sidebar calculateRoute={calculateRoute} endAddress={endAddress} setEndAddress={setEndAddress} />
+            <Sidebar calculateRoute={calculateRoute} endAddress={endAddress} setEndAddress={setEndAddress} rearrangeMarker={rearrangeMarker} />
             <MapSection id="map"></MapSection>
             {loading && (
                 <LoadingOverlay>

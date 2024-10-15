@@ -8,7 +8,7 @@ import ToggleButton from '../button/ToggleButton';
 import Caption from '../typo/Caption';
 
 
-const Sidebar = ({ calculateRoute, endAddress, setEndAddress }) => {
+const Sidebar = ({ calculateRoute, endAddress, setEndAddress, rearrangeMarker }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [startAddress, setStartAddress] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
@@ -30,7 +30,14 @@ const Sidebar = ({ calculateRoute, endAddress, setEndAddress }) => {
                     <InputText label={'도착'} placeholder={'아래 리스트에서 장소를 선택해주세요.'} value={endAddress} onChange={(e) => setEndAddress(e.target.value)} />
                     <SidebarResult id='result'></SidebarResult>
                     <Button onClick={handleRouteCalculation}>
-                        <Caption fontFamily='var(--font-family-primary)' textAlign="center" fontWeight="600" color="var(--White)">경로 찾기</Caption>
+                        <Caption fontFamily='var(--font-family-primary)' textAlign="center" fontWeight="600" color="var(--White)">
+                            경로 찾기
+                        </Caption>
+                    </Button>
+                    <Button onClick={rearrangeMarker}>
+                        <Caption fontFamily='var(--font-family-primary)' textAlign="center" fontWeight="600" color="var(--White)">
+                            지도 정렬하기
+                        </Caption>
                     </Button>
                 </SidebarTop>
                 <SidebarBottom>
