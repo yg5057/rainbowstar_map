@@ -110,7 +110,7 @@ const Map = () => {
                                     position: marker.getPosition(),
                                     content: overlayContent,
                                     xAnchor: 0.5,
-                                    yAnchor: 1.3,
+                                    yAnchor: 1.1,
                                     zIndex: 2,
                                 });
 
@@ -252,7 +252,7 @@ const Map = () => {
                                     position: endPosition,
                                     content: overlayContent,
                                     xAnchor: 0.5,
-                                    yAnchor: 1.3,
+                                    yAnchor: 1.1,
                                     zIndex: 2,
                                 });
 
