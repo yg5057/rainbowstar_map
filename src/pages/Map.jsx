@@ -118,8 +118,8 @@ const Map = () => {
                                 const customOverlay = new kakao.maps.CustomOverlay({
                                     position: marker.getPosition(),
                                     content: overlayContent,
-                                    xAnchor: 0.5,
-                                    yAnchor: 1.4,
+                                    xAnchor: 0.6,
+                                    yAnchor: 1.15,
                                     zIndex: 2,
                                 });
 
@@ -190,8 +190,8 @@ const Map = () => {
                 const customOverlay = new kakao.maps.CustomOverlay({
                     position,
                     content: overlayContent,
-                    xAnchor: 0.5,
-                    yAnchor: 1.4,
+                    xAnchor: 0.6,
+                    yAnchor: 1.15,
                     zIndex: 2,
                 });
 
@@ -325,8 +325,8 @@ const Map = () => {
                                 const customOverlay = new kakao.maps.CustomOverlay({
                                     position: endPosition,
                                     content: overlayContent,
-                                    xAnchor: 0.5,
-                                    yAnchor: 1.4,
+                                    xAnchor: 0.6,
+                                    yAnchor: 1.15,
                                     zIndex: 2,
                                 });
 
@@ -383,22 +383,6 @@ const MapSection = styled.section`
     z-index: 0; 
 `;
 
-// const LoadingOverlay = styled.div`
-//     position: absolute; 
-//     top: 50%;
-//     left: 50%; 
-//     transform: translate(-50%, -50%); 
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: fit-content; 
-//     height: fit-content; 
-//     padding: 10rem; 
-//     background: rgba(255, 255, 255, 0.7); 
-//     border-radius: 8px; 
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-//     z-index: 10; 
-// `;
 
 const LoadingOverlay = styled.div`
     position: absolute; 
