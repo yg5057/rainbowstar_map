@@ -28,16 +28,19 @@ const Button = styled.button`
   font-size: 2rem;
   box-shadow: var(--DropShadow-Bottom-XS);
   z-index: 10;
-  &:hover { animation: ${hoverAnimation} 0.2s forwards; }
-  &:active { animation: ${clickAnimation} 0.2s ease-out; }
+    &:hover { animation: ${hoverAnimation} 0.2s forwards; }
+    &:active { animation: ${clickAnimation} 0.2s ease-out; }
+    @media (max-width: 768px) {
+      left: ${(props) => (props.isOpen ? '25rem' : '2rem')};
+      }
 `;
 
 const ToggleButton = ({ isOpen, toggleSidebar }) => {
-    return (
-        <Button isOpen={isOpen} onClick={toggleSidebar}>
-            <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
-        </Button>
-    );
+  return (
+    <Button isOpen={isOpen} onClick={toggleSidebar}>
+      <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+    </Button>
+  );
 };
 
 export default ToggleButton;

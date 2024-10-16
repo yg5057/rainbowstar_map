@@ -17,6 +17,11 @@ const StyledText = styled.p.attrs(props => ({
     line-height: 20px; 
     word-wrap: break-word;
     word-break: keep-all;
+
+    @media (max-width: 480px) {
+        font-size: 12px;
+        line-height: 12px; 
+    }
 `;
 
 const ParagraphS = ({ children, color, fontWeight, textAlign, fontFamily }) => {

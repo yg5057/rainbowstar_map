@@ -190,8 +190,8 @@ const OverlayContainer = styled.div`
      flex-direction: column;
      align-items: flex-start;
      width: fit-content;
-     max-width: 30rem;
      height: fit-content;
+     max-width: 30rem;
      min-width: 25rem;
      border: none;  
      box-shadow: var(--DropShadow-Bottom-M);
