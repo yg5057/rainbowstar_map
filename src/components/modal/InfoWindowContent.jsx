@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faTimes, faCircleRight, faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-import ParagraphM from '../typo/ParagraphM';
+
 import ParagraphS from '../typo/ParagraphS';
 import Caption from '../typo/Caption';
 import InfoRow from './InfoRow';
@@ -43,9 +43,9 @@ const InfoWindowContent = ({ distance, duration, additionalInfo }) => {
         <OverlayContainer>
             <TitleWrapper>
                 <FontAwesomeIcon icon={faPaw} />
-                <ParagraphM fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--White)">
+                <ParagraphS fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--White)">
                     {displayInfo(additionalInfo.title)}
-                </ParagraphM>
+                </ParagraphS>
                 <CloseButton onClick={handleClose}>
                     <FontAwesomeIcon icon={faTimes} />
                 </CloseButton>
@@ -235,6 +235,21 @@ const OverlayContainer = styled.div`
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        @media (max-width: 480px) {
+            max-width: 25rem;
+            min-width: 20rem;
+            width: fit-content;
+            .slick-dots {
+                position: absolute;
+                bottom: -18px;
+                display: block;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                text-align: center;
+            }
+        }
 `;
 const TitleWrapper = styled.div`
     display: flex;
@@ -266,10 +281,16 @@ const ContentsWrapper = styled.div`
     gap: 1.6rem;
     border-radius: 0 0 .6rem .6rem;
     background: var(--White);
+    @media (max-width: 480px) {
+        gap: .8rem;
+    }
 `;
 const ContentsPhoto = styled.div`
     width: 100%;
     height: 15rem; 
+    @media (max-width: 480px) {
+        height: 13rem; 
+    }
 `;
 const ImageWrapper = styled.div`
     height: 100%; 
@@ -282,6 +303,9 @@ const Image = styled.img`
     height:  13rem; 
     max-height: 100%; 
     object-fit: cover; 
+    @media (max-width: 480px) {
+        height: 11rem; 
+    }
 `;
 const ContentsTop = styled.div`
     width: 100%;
@@ -289,7 +313,7 @@ const ContentsTop = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: .2rem;
+    gap: .4rem;
 `;
 const ContentsMiddle = styled.div`
     width: 100%;
@@ -306,6 +330,9 @@ const ContentsBottom = styled.div`
     align-items: flex-start;
     gap: .4rem;
     border-radius: 0 0 .6rem .6rem;
+    @media (max-width: 480px) {
+        gap: .3rem;
+    }
 `;
 const TextRow = styled.div`
     width: 100%; 
@@ -329,7 +356,6 @@ const TextRow = styled.div`
         min-width: 0;         
     }
 `;
-
 const TextRowTable = styled.div`
     width: 100%;
     display: flex;
@@ -337,7 +363,6 @@ const TextRowTable = styled.div`
     justify-content: space-between;
     align-items: center;
 `
-
 const TextRowReviewTable = styled.div`
     width: 100%; 
     display: flex;

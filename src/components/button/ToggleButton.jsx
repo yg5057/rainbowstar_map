@@ -30,7 +30,8 @@ const Button = styled.button`
   z-index: 10;
     &:hover { animation: ${hoverAnimation} 0.2s forwards; }
     &:active { animation: ${clickAnimation} 0.2s ease-out; }
-    @media (max-width: 768px) {
+    
+    @media (max-width: 480px) {
       left: ${(props) => (props.isOpen ? '25rem' : '2rem')};
       }
 `;
