@@ -211,12 +211,11 @@ const OverlayContainer = styled.div`
             font-family: 'slick';
             font-size: 20px;
             line-height: 1;
-            opacity: .75;
+            opacity: .6;
             color: var(--InfoWindow-conts-title);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
 `;
 const TitleWrapper = styled.div`
     display: flex;

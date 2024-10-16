@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Slider from 'react-slick';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaw, faTimes, faCircleRight, faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -27,6 +28,17 @@ const InfoWindowContent = ({ distance, duration, additionalInfo }) => {
 
     if (!isVisible) return null;
 
+    const images = Object.values(additionalInfo.photo || {});
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
+
+
     return (
         <OverlayContainer>
             <TitleWrapper>
@@ -39,6 +51,15 @@ const InfoWindowContent = ({ distance, duration, additionalInfo }) => {
                 </CloseButton>
             </TitleWrapper>
             <ContentsWrapper>
+                <ContentsPhoto>
+                    <Slider {...settings}>
+                        {images.map((img, index) => (
+                            <ImageWrapper key={index}>
+                                <Image src={img} alt={`Image ${index + 1}`} />
+                            </ImageWrapper>
+                        ))}
+                    </Slider>
+                </ContentsPhoto>
                 <ContentsTop>
                     <TextRow>
                         <ParagraphS fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--InfoWindow-conts-title)">
@@ -195,16 +216,25 @@ const OverlayContainer = styled.div`
      box-shadow: var(--DropShadow-Bottom-M);
      position: relative;
      z-index: 99999; 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 100%; 
-        left: 50%; 
-        transform: translateX(-50%); 
-        border-width: 1.6rem; 
-        border-style: solid;
-        border-color: #ffff transparent transparent transparent; 
-    }
+     &::after {
+            content: '';
+            position: absolute;
+            top: 100%; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            border-width: 1.6rem;
+            border-style: solid;
+            border-color: #ffff transparent transparent transparent; 
+        }
+        .slick-prev:before, .slick-next:before {
+            font-family: 'slick';
+            font-size: 20px;
+            line-height: 1;
+            opacity: .6;
+            color: var(--InfoWindow-conts-title);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 `;
 const TitleWrapper = styled.div`
     display: flex;
@@ -236,6 +266,22 @@ const ContentsWrapper = styled.div`
     gap: 1.6rem;
     border-radius: 0 0 .6rem .6rem;
     background: var(--White);
+`;
+const ContentsPhoto = styled.div`
+    width: 100%;
+    height: 15rem; 
+`;
+const ImageWrapper = styled.div`
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+const Image = styled.img`
+    width: 100%;
+    height:  13rem; 
+    max-height: 100%; 
+    object-fit: cover; 
 `;
 const ContentsTop = styled.div`
     width: 100%;
