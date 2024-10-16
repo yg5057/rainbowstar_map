@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import InputText from '../input/InputText';
 import InputSearch from '../input/InputSearch';
 import ListView from '../list/ListView';
@@ -8,11 +9,10 @@ import ToggleButton from '../button/ToggleButton';
 import Caption from '../typo/Caption';
 
 
-const Sidebar = ({ calculateRoute, endAddress, setEndAddress, rearrangeMarker }) => {
+const Sidebar = ({ showOverlay, calculateRoute, endAddress, setEndAddress, rearrangeMarker }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [startAddress, setStartAddress] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
-
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
@@ -42,7 +42,7 @@ const Sidebar = ({ calculateRoute, endAddress, setEndAddress, rearrangeMarker })
                 </SidebarTop>
                 <SidebarBottom>
                     <InputSearch placeholder={'정확한 도로명 주소를 입력해주세요.'} onChange={(e) => setSearchQuery(e.target.value)} />
-                    <ListView setEndAddress={setEndAddress} searchQuery={searchQuery} calculateRoute={calculateRoute} />
+                    <ListView showOverlay={showOverlay} setEndAddress={setEndAddress} searchQuery={searchQuery} calculateRoute={calculateRoute} />
                 </SidebarBottom>
             </SidebarContainer>
             <ToggleButton isOpen={isOpen} toggleSidebar={toggleSidebar} />

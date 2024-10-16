@@ -10,7 +10,7 @@ import InfoRow from './InfoRow';
 
 
 
-const InfoWindowContent = ({ distance, duration, additionalInfo }) => {
+const CustomOverlayContent = ({ additionalInfo }) => {
     const [isVisible, setIsVisible] = useState(true);
     const [isDetailsVisible, setIsDetailsVisible] = useState(false);
 
@@ -40,31 +40,13 @@ const InfoWindowContent = ({ distance, duration, additionalInfo }) => {
             </TitleWrapper>
             <ContentsWrapper>
                 <ContentsTop>
-                    <TextRow>
-                        <ParagraphS fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--InfoWindow-conts-title)">
-                            거리
-                        </ParagraphS>
-                        <Caption fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600">
-                            {distance}km
-                        </Caption>
-                    </TextRow>
-                    <TextRow>
-                        <ParagraphS fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--InfoWindow-conts-title)">
-                            소요 시간
-                        </ParagraphS>
-                        <Caption fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600">
-                            {duration}
-                        </Caption>
-                    </TextRow>
-                </ContentsTop>
-                <ContentsMiddle>
                     <TextRowTable onClick={toggleDetails} style={{ cursor: 'pointer' }}>
                         <ParagraphS fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--InfoWindow-conts-title)">
                             상세 정보 보기
                         </ParagraphS>
                         <FontAwesomeIcon icon={faCircleChevronDown} style={{ color: "#375E99", transform: isDetailsVisible ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }} />
                     </TextRowTable>
-                </ContentsMiddle>
+                </ContentsTop>
                 <ContentsBottom style={{ maxHeight: isDetailsVisible ? '500px' : '0', overflow: 'hidden', transition: 'max-height 0.3s ease-out' }}>
                     <InfoRow title="평점">{displayInfo(additionalInfo.score)} 점</InfoRow>
                     <InfoRow title="면허 보유">{displayInfo(additionalInfo.license)}</InfoRow>
@@ -180,8 +162,7 @@ const InfoWindowContent = ({ distance, duration, additionalInfo }) => {
     );
 };
 
-export default InfoWindowContent;
-
+export default CustomOverlayContent;
 
 const OverlayContainer = styled.div`
      display: flex;
@@ -201,7 +182,7 @@ const OverlayContainer = styled.div`
         top: 100%; 
         left: 50%; 
         transform: translateX(-50%); 
-        border-width: 1.6rem; 
+        border-width: 1.6rem;
         border-style: solid;
         border-color: #ffff transparent transparent transparent; 
     }
@@ -238,14 +219,6 @@ const ContentsWrapper = styled.div`
     background: var(--White);
 `;
 const ContentsTop = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: .2rem;
-`;
-const ContentsMiddle = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -314,4 +287,3 @@ const TextRowReviewTable = styled.div`
         text-overflow: ellipsis;     
     }
 `
-

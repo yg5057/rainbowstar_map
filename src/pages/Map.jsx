@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Sidebar from '../components/sidebar/Sidebar';
 import InfoWindowContent from '../components/modal/InfoWindowContent';
-import CustomOverlayContent from '../components/modal/CustomOverlayMarker';
+import CustomOverlayContent from '../components/modal/CustomOverlayContent';
 
 // 마커 이미지
 import pink from '../assets/images/pink.png';
@@ -21,14 +21,17 @@ const Map = () => {
     const [currentPolyline, setCurrentPolyline] = useState(null);
     const [currentOverlay, setCurrentOverlay] = useState(null);
     const [markers, setMarkers] = useState([]);
+    const [places, setPlaces] = useState([]);
+
     const [endAddress, setEndAddress] = useState('');
     const [loading, setLoading] = useState(false);
-    const [places, setPlaces] = useState([]); // places 상태 추가
     const areaImageMap = {
         '강원': pink, '경기': skyblue, '경남': yellow, '경북': blue, '광주': red, '대구': blue, '부산': yellow, '세종': green, '울산': yellow, '인천': skyblue, '전남': red, '전북': red, '충남': green, '충북': green
     };
 
 
+
+    //지도 초기 설정
     useEffect(() => {
         const container = document.getElementById('map');
         const options = {
@@ -46,6 +49,8 @@ const Map = () => {
     }, []);
 
 
+
+    // 마커 클릭 함수
     const addMarkersFromPlaces = () => {
         if (!geocoder || !map) return;
 
@@ -71,6 +76,10 @@ const Map = () => {
                             marker.kakaoPlaceData = place;
 
                             kakao.maps.event.addListener(marker, 'click', () => {
+                                if (currentOverlay) {
+                                    currentOverlay.setMap(null);
+                                    setCurrentOverlay(null);
+                                }
                                 setEndAddress(place.address);
 
                                 const additionalInfo = {
@@ -110,7 +119,7 @@ const Map = () => {
                                     position: marker.getPosition(),
                                     content: overlayContent,
                                     xAnchor: 0.5,
-                                    yAnchor: 1.1,
+                                    yAnchor: 1.4,
                                     zIndex: 2,
                                 });
 
@@ -126,12 +135,77 @@ const Map = () => {
             })
             .catch(error => console.error("장소 마커 추가 중 오류 발생:", error));
     };
+
+
     useEffect(() => {
         if (map && geocoder) {
             addMarkersFromPlaces();
         }
     }, [map, geocoder]);
 
+
+
+    // 리스트 클릭 함수
+    const showOverlay = (address) => {
+        const selectedPlace = places.find(place => place.address === address);
+        if (!selectedPlace) return;
+
+        geocoder.addressSearch(address, (result, status) => {
+            if (status === kakao.maps.services.Status.OK) {
+                const position = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                const additionalInfo = {
+                    area: selectedPlace.area,
+                    title: selectedPlace.title,
+                    license: selectedPlace.license,
+                    photo: selectedPlace.photo,
+                    homePage: selectedPlace.homePage,
+                    address: selectedPlace.address,
+                    phone1: selectedPlace.phone1,
+                    phone2: selectedPlace.phone2,
+                    score: selectedPlace.score,
+                    funeralPrice5kg: selectedPlace.funeralPrice5kg,
+                    funeralPrice15kg: selectedPlace.funeralPrice15kg,
+                    funeralPrice1kg: selectedPlace.funeralPrice1kg,
+                    funeralPriceUrl: selectedPlace.funeralPriceUrl,
+                    funeralSupplies: selectedPlace.funeralSupplies,
+                    enshrinementPriceTag: selectedPlace.enshrinementPriceTag,
+                    memorialStone: selectedPlace.memorialStone,
+                    memorialStonePrice: selectedPlace.memorialStonePrice,
+                    review1: selectedPlace.review1,
+                    review2: selectedPlace.review2,
+                    review3: selectedPlace.review3,
+                    url: selectedPlace.url,
+                };
+
+                // 커스텀 오버레이 생성
+                const overlayContent = document.createElement('div');
+                ReactDOM.render(
+                    <CustomOverlayContent
+                        additionalInfo={additionalInfo}
+                    />,
+                    overlayContent
+                );
+
+                const customOverlay = new kakao.maps.CustomOverlay({
+                    position,
+                    content: overlayContent,
+                    xAnchor: 0.5,
+                    yAnchor: 1.4,
+                    zIndex: 2,
+                });
+
+                if (currentOverlay) {
+                    currentOverlay.setMap(null);
+                }
+
+                customOverlay.setMap(map);
+                setCurrentOverlay(customOverlay);
+            }
+        });
+    };
+
+    // 경로 계산 함수
     const calculateRoute = (startAddress, endAddress) => {
         if (!startAddress || !endAddress) return;
 
@@ -168,8 +242,8 @@ const Map = () => {
                             .then(response => response.json())
                             .then(data => {
                                 const route = data.routes[0];
-                                const distance = route.summary.distance; // 미터 단위 거리
-                                const duration = route.summary.duration; // 초 단위 소요 시간
+                                const distance = route.summary.distance;
+                                const duration = route.summary.duration;
 
                                 const path = route.sections.flatMap(section =>
                                     section.roads.flatMap(road =>
@@ -203,13 +277,13 @@ const Map = () => {
                                 endMarker.setMap(map);
                                 setMarkers(prev => [...prev, endMarker]);
 
-                                // 거리와 소요 시간 변환
-                                const distanceInKm = (distance / 1000).toFixed(1); // km 단위
+
+                                const distanceInKm = (distance / 1000).toFixed(1);
                                 const hours = Math.floor(duration / 3600);
                                 const minutes = Math.floor((duration % 3600) / 60);
                                 const durationString = `${hours}시간 ${minutes}분`;
 
-                                // InfoWindowContent에 사용할 추가 정보 가져오기
+
                                 const selectedPlace = places.find(place => place.address === endAddress);
                                 const additionalInfo = {
                                     area: selectedPlace?.area,
@@ -241,9 +315,9 @@ const Map = () => {
                                     <InfoWindowContent
                                         startAddress={startAddress}
                                         endAddress={endAddress}
-                                        distance={distanceInKm} // 킬로미터 단위 거리
-                                        duration={durationString} // 시, 분 단위 소요 시간
-                                        additionalInfo={additionalInfo} // 추가 정보 전달
+                                        distance={distanceInKm}
+                                        duration={durationString}
+                                        additionalInfo={additionalInfo}
                                     />,
                                     overlayContent
                                 );
@@ -252,7 +326,7 @@ const Map = () => {
                                     position: endPosition,
                                     content: overlayContent,
                                     xAnchor: 0.5,
-                                    yAnchor: 1.1,
+                                    yAnchor: 1.4,
                                     zIndex: 2,
                                 });
 
@@ -275,13 +349,15 @@ const Map = () => {
         });
     };
 
+
     const rearrangeMarker = () => {
         window.location.reload();
     };
 
+
     return (
         <>
-            <Sidebar calculateRoute={calculateRoute} endAddress={endAddress} setEndAddress={setEndAddress} rearrangeMarker={rearrangeMarker} />
+            <Sidebar calculateRoute={calculateRoute} endAddress={endAddress} setEndAddress={setEndAddress} rearrangeMarker={rearrangeMarker} showOverlay={showOverlay} />
             <MapSection id="map"></MapSection>
             {loading && (
                 <LoadingOverlay>
