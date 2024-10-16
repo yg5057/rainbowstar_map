@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ParagraphS from '../typo/ParagraphS';
 import Caption from '../typo/Caption';
 
-const ListView = ({ setEndAddress, searchQuery, showOverlay }) => {
+const ListView = ({ setEndAddress, searchQuery, showOverlay, setIsOpen }) => {
     const [places, setPlaces] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -31,6 +31,11 @@ const ListView = ({ setEndAddress, searchQuery, showOverlay }) => {
     const setDestination = (place) => {
         setEndAddress(place.address);
         showOverlay(place.address);
+        alert(`도착지 위치가 "${place.title}"으로 선택되었습니다.`);
+
+        if (window.innerWidth <= 480) {
+            setIsOpen(false);
+        }
     };
 
     if (loading) {

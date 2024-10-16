@@ -13,6 +13,7 @@ const Sidebar = ({ showOverlay, calculateRoute, endAddress, setEndAddress, rearr
     const [isOpen, setIsOpen] = useState(false);
     const [startAddress, setStartAddress] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
+
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
@@ -42,7 +43,12 @@ const Sidebar = ({ showOverlay, calculateRoute, endAddress, setEndAddress, rearr
                 </SidebarTop>
                 <SidebarBottom>
                     <InputSearch placeholder={'정확한 도로명 주소를 입력해주세요.'} onChange={(e) => setSearchQuery(e.target.value)} />
-                    <ListView showOverlay={showOverlay} setEndAddress={setEndAddress} searchQuery={searchQuery} calculateRoute={calculateRoute} />
+                    <ListView
+                        showOverlay={showOverlay}
+                        setEndAddress={setEndAddress}
+                        searchQuery={searchQuery}
+                        calculateRoute={calculateRoute}
+                        setIsOpen={setIsOpen} />
                 </SidebarBottom>
             </SidebarContainer>
             <ToggleButton isOpen={isOpen} toggleSidebar={toggleSidebar} />
