@@ -327,7 +327,6 @@ const TextRow = styled.div`
         min-width: 0;         
     }
 `;
-
 const TextRowTable = styled.div`
     width: 100%;
     display: flex;
@@ -335,7 +334,6 @@ const TextRowTable = styled.div`
     justify-content: space-between;
     align-items: center;
 `
-
 const TextRowReviewTable = styled.div`
     width: 100%; 
     display: flex;
