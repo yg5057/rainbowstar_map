@@ -3,7 +3,10 @@
         "area": "강원",
         "title": "강릉 펫사랑",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://gpetlove.modoo.at",
         "address": "강원 강릉시 사천면 구라미길 376",
         "phone1": "033-645-8888",
@@ -26,7 +29,10 @@
         "area": "강원",
         "title": "주식회사 패투헤븐",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://www.pettoheaven.co.kr",
         "address": "강원 원주시 소초면 현촌길 90-3",
         "phone1": "033-745-4211",
@@ -49,7 +55,10 @@
         "area": "강원",
         "title": "펫 메모리얼",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.petmemorial.co.kr",
         "address": "강원 횡성군 공근면 경강로초원6길 58",
         "phone1": "1566-4379",
@@ -72,7 +81,10 @@
         "area": "경기",
         "title": "㈜펫바라기",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.petbaragi.com",
         "address": "경기 고양시 일산동구 설문동 은마길 63번길 25-2",
         "phone1": "031-976-3179",
@@ -95,7 +107,10 @@
         "area": "경기",
         "title": "㈜펫포레스트",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://petforest.co.kr",
         "address": "경기 광주시 오포안로 77",
         "phone1": "1577-0996",
@@ -118,7 +133,10 @@
         "area": "경기",
         "title": "21그램 반려동물 장례식장",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://21gram.co.kr",
         "address": "경기 광주시 오포읍 매산리 185-35",
         "phone1": "1688-1240",
@@ -141,7 +159,10 @@
         "area": "경기",
         "title": "포포즈 반려동물 장례식장 경기 광주점",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://fourpaws.co.kr",
         "address": "경기 광주시 초월읍 산수로 409-11",
         "phone1": "1588-2888",
@@ -164,7 +185,10 @@
         "area": "경기",
         "title": "㈜해피엔딩",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.wehappyending.com",
         "address": "경기 광주시 초월읍 지월로100번길 18",
         "phone1": "1899-5127",
@@ -187,7 +211,10 @@
         "area": "경기",
         "title": "러브펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.러브펫.net",
         "address": "경기 광주시 초월읍 지월리 712-10",
         "phone1": "031-796-4341",
@@ -210,7 +237,10 @@
         "area": "경기",
         "title": "포포즈 반려동물 장례식장 경기 김포점",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://fourpaws.co.kr",
         "address": "경기 김포시 월곶면 애기봉로 262",
         "phone1": "1588-2888",
@@ -233,7 +263,10 @@
         "area": "경기",
         "title": "아이드림펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.idreampet.co.kr",
         "address": "경기 김포시 하성면 하성로 647 1층",
         "phone1": "031-996-7444",
@@ -256,7 +289,10 @@
         "area": "경기",
         "title": "엔젤스톤",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.angelstone.co.kr",
         "address": "경기 김포시 하성면 하성로 720",
         "phone1": "031-981-0271",
@@ -279,7 +315,10 @@
         "area": "경기",
         "title": "(주)펫콤",
         "license": "화장",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://petcom.kr",
         "address": "경기 안산시 단원구 광덕서로 엠티브이1로 159",
         "phone1": "1833-5158",
@@ -302,7 +341,10 @@
         "area": "경기",
         "title": "포포즈 반려동물 장례식장 경기 양주점",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "../images/down1.png",
+            "photo2": "../images/down2.png"
+        },
         "homePage": "http://fourpaws.co.kr",
         "address": "경기 양주시 광적면 부흥로 145",
         "phone1": "1588-2888",
@@ -325,7 +367,10 @@
         "area": "경기",
         "title": "㈜아리아펫",
         "license": "장례, 화장",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://ariapet.modoo.at/",
         "address": "경기 이천시 마장면 이장로 329-2",
         "phone1": "031-635-2266",
@@ -348,7 +393,10 @@
         "area": "경기",
         "title": "백꽃사랑하이빛",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://heavenlightyard.modoo.at",
         "address": "경기도 광주시 곤지암읍 신만로 305",
         "phone1": "1811-9650",
@@ -371,7 +419,10 @@
         "area": "경기",
         "title": "하늘강아지 반려동물 장례식장",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://skyplayground.co.kr",
         "address": "경기도 광주시 초월읍 선장동길 31-3",
         "phone1": "1577-4428",
@@ -394,7 +445,10 @@
         "area": "경기",
         "title": "펫포레스트 김포점",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://petforest.co.kr",
         "address": "경기도 김포시 통진읍 고정로 308",
         "phone1": "1577-0996",
@@ -417,7 +471,10 @@
         "area": "경기",
         "title": "마스꼬따 휴㈜",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.mascotahue.com",
         "address": "경기도 김포시 통진읍 애기봉로 681번길 73-20",
         "phone1": "031-989-2444",
@@ -440,7 +497,10 @@
         "area": "경기",
         "title": "몽몽이엠파크",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://mmempark.com",
         "address": "경기도 남양주시 화도읍 모꼬지로 17번길 136",
         "phone1": "1811-1336",
@@ -463,7 +523,10 @@
         "area": "경기",
         "title": "21그램 반려동물 장례식장 남양주점",
         "license": "장례, 화장",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://21gram.co.kr",
         "address": "경기도 남양주시 화도읍 수레로964번길 86",
         "phone1": "1688-1240",
@@ -486,7 +549,10 @@
         "area": "경기",
         "title": "ROYHILLS",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://www.royhills.co.kr",
         "address": "경기도 양평군 양동면 양동금곡 4길 10",
         "phone1": "1855-2004",
@@ -509,7 +575,10 @@
         "area": "경기",
         "title": "리멤버",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://리멤버.net",
         "address": "경기도 용인시 처인구 남사면 원암로 535",
         "phone1": "080-200-5004",
@@ -532,7 +601,10 @@
         "area": "경기",
         "title": "씨엘로펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.cielopet.co.kr",
         "address": "경기도 용인시 처인구 죽양대로 1206",
         "phone1": "1577-7332",
@@ -555,7 +627,10 @@
         "area": "경기",
         "title": "(주)페어웰",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://farewell.kr",
         "address": "경기도 파주시 광탄면 수레길 302",
         "phone1": "031-941-3350",
@@ -578,7 +653,10 @@
         "area": "경기",
         "title": "스타펫",
         "license": "화장",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://www.starpetcompany.com/",
         "address": "경기도 포천시 내촌면 진금로 34",
         "phone1": "1588-9344",
@@ -601,7 +679,10 @@
         "area": "경기",
         "title": "펫오케스트라",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.petorchestra.co.kr/",
         "address": "경기도 화성시 비봉면 양노남길 108",
         "phone1": "1588-1289",
@@ -624,7 +705,10 @@
         "area": "경기",
         "title": "(주)포이리스",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://pawiris.com",
         "address": "경기도 화성시 서신면 안벼슬길102번길 165",
         "phone1": "1899-6415",
@@ -647,7 +731,10 @@
         "area": "경기",
         "title": "스토리펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://storypet.modoo.at/",
         "address": "경기도 화성시 정남면 서봉로851번길 83",
         "phone1": "031-353-5579",
@@ -670,7 +757,10 @@
         "area": "경기",
         "title": "포포즈 반려동물 장례식장 경기 화성점",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://fourpaws.co.kr",
         "address": "경기도 화성시 팔탄면 독곡길 24-42",
         "phone1": "1588-2888",
@@ -693,7 +783,10 @@
         "area": "경남",
         "title": "하늘소풍",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.하늘소풍.kr",
         "address": "경남 고성군 회화면 봉오로 145-22",
         "phone1": "1566-4546",
@@ -716,7 +809,10 @@
         "area": "경남",
         "title": "메리온",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.merion.co.kr",
         "address": "경남 양산시 상북면 오룡길 152",
         "phone1": "055-374-6503",
@@ -739,7 +835,10 @@
         "area": "경남",
         "title": "한별 반려동물 장례식장",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://hanbyul16449040.modoo.at",
         "address": "경남 창원시 진해구 진해대로 2507",
         "phone1": "1644-9040",
@@ -762,7 +861,10 @@
         "area": "경북",
         "title": "하얀민들레",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.youngheal.com",
         "address": "경북 청도군 화양읍 남성현로 852",
         "phone1": "1599-1627",
@@ -785,7 +887,10 @@
         "area": "경남",
         "title": "펫로스 케어",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.petlosscare.co.kr/",
         "address": "경상남도 김해시 상동면 묵방로 109번길 3",
         "phone1": "1522-2253",
@@ -808,7 +913,10 @@
         "area": "경남",
         "title": "별이되다",
         "license": "화장, 장례, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.becomestars.co.kr",
         "address": "경상남도 김해시 생림면 나전리 137번길 31",
         "phone1": "1566-9399",
@@ -831,7 +939,10 @@
         "area": "경남",
         "title": "아이헤븐",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://iheaven.kr",
         "address": "경상남도 김해시 생림면 봉림리 928번길 10-5",
         "phone1": "1577-5474",
@@ -854,7 +965,10 @@
         "area": "경남",
         "title": "포포즈 반려동물 장례식장 부산점",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://fourpaws.co.kr",
         "address": "경상남도 김해시 한림면 안하로 102",
         "phone1": "1588-2888",
@@ -877,7 +991,10 @@
         "area": "경남",
         "title": "(주)펫노블레스",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.petnoblesse.com",
         "address": "경상남도 양산시 상북면 공원로3길 19-91",
         "phone1": "055-374-4400",
@@ -900,7 +1017,10 @@
         "area": "경남",
         "title": "한별 리멤버파크",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://hanbyuldog.modoo.at",
         "address": "경상남도 함안군 법수면 이묵골로 135-3",
         "phone1": "1899-2610",
@@ -923,7 +1043,10 @@
         "area": "경북",
         "title": "아이들랜드",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://아이들랜드.com",
         "address": "경상북도 경산시 와촌면 불굴사길 82",
         "phone1": "1522-6979",
@@ -946,7 +1069,10 @@
         "area": "경북",
         "title": "(주)한별소울펫",
         "license": "장례, 화장, 건조, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://hanbyulsoulpet.modoo.at",
         "address": "경상북도 구미시 옥성면 이곡3길 69",
         "phone1": "1588-9749",
@@ -969,7 +1095,10 @@
         "area": "경북",
         "title": "경북반려동물장례식장",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://gbpet.co.kr",
         "address": "경상북도 김천시 봉산면 영남대로 353",
         "phone1": "1522-0912",
@@ -992,7 +1121,10 @@
         "area": "경북",
         "title": "(주)젠틀펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://gentlepetstar.com/",
         "address": "경상북도 문경시 문경읍 문경대로 2430",
         "phone1": "1577-3620",
@@ -1015,7 +1147,10 @@
         "area": "경북",
         "title": "강아지 펫 헤븐",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://petheaven.modoo.at/",
         "address": "경상북도 성주군 선남면 오도리 91",
         "phone1": "1899-6144",
@@ -1038,7 +1173,10 @@
         "area": "경북",
         "title": "스윗드림 펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.sweetdreampet.com",
         "address": "경상북도 칠곡군 가산면 다부거문1길 51-68",
         "phone1": "054-974-2220",
@@ -1061,7 +1199,10 @@
         "area": "광주",
         "title": "㈜하늘펫",
         "license": "장례",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "폐업",
         "address": "광주 광산구 지죽동 409-14",
         "phone1": "062-946-2626",
@@ -1084,7 +1225,10 @@
         "area": "경북",
         "title": "대구러브펫",
         "license": "장례",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://dglovepet.kr",
         "address": "대구 달서구 장동 50번지",
         "phone1": "053-593-4900",
@@ -1107,7 +1251,10 @@
         "area": "경북",
         "title": "리틀포즈 반려동물 장례식장",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://littlepaws.co.kr/doc/facility1.php",
         "address": "대구광역시 군위군 부계면 부흥로 118",
         "phone1": "054-382-0400",
@@ -1130,7 +1277,10 @@
         "area": "경남",
         "title": "파트라슈",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.mypatrasche.co.kr",
         "address": "부산 기장군 장안읍 기장대로 1561-68",
         "phone1": "051-723-2201",
@@ -1153,7 +1303,10 @@
         "area": "경남",
         "title": "센트럴파크(주)",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.startice.co.kr",
         "address": "부산광역시 기장군 일광면 차양길 175",
         "phone1": "051-728-5411",
@@ -1176,7 +1329,10 @@
         "area": "경남",
         "title": "아이별",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.aistar.co.kr",
         "address": "부산광역시 기장군 장안읍 기룡길 11-33",
         "phone1": "051-727-4499",
@@ -1199,7 +1355,10 @@
         "area": "세종",
         "title": "포포즈 반려동물 장례식장 세종점",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://fourpaws.co.kr",
         "address": "세종시 부강로 시목부강로 620",
         "phone1": "1588-2888",
@@ -1222,7 +1381,10 @@
         "area": "세종",
         "title": "펫포유",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.petforyou.kr",
         "address": "세종특별자치시 장군면 정동길 76",
         "phone1": "1533-4426",
@@ -1245,7 +1407,10 @@
         "area": "경남",
         "title": "이별공간",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://ebyulplace.modoo.at",
         "address": "울산광역시 울주군 삼동면 삼동로 140",
         "phone1": "052-263-2300",
@@ -1268,7 +1433,10 @@
         "area": "인천",
         "title": "㈜더 포에버",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.theforever.net",
         "address": "인천광역시 서구 설원로 79",
         "phone1": "032-713-5002",
@@ -1291,7 +1459,10 @@
         "area": "인천",
         "title": "어게인",
         "license": "봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://xn--o79a109b1hb.com/home",
         "address": "인천광역시 서구 원당대로 246번길 15",
         "phone1": "032-566-1936",
@@ -1314,7 +1485,10 @@
         "area": "전남",
         "title": "해늘마루",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.haeneul.kr",
         "address": "전남 목포시 고하대로 1140-17",
         "phone1": "061-273-4000",
@@ -1337,7 +1511,10 @@
         "area": "전남",
         "title": "순천 반려동물장례식장 하늘별",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://www.하늘별반려동물장례식장.kr",
         "address": "전라남도 순천시 별량면 송산길 259",
         "phone1": "061-741-0703",
@@ -1360,7 +1537,10 @@
         "area": "전남",
         "title": "전남반려동물장례식장 푸른솔 (주)",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://www.greenssol.com",
         "address": "전라남도 여수시 율촌면 조화길 31",
         "phone1": "1566-7112",
@@ -1383,7 +1563,10 @@
         "area": "전남",
         "title": "타임투반려동물장례문화원",
         "license": "장례, 건조, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.timeto.co.kr",
         "address": "전라남도 함평군 학교면 학교월봉길 217",
         "phone1": "061-322-0122",
@@ -1406,7 +1589,10 @@
         "area": "전남",
         "title": "서래안 펫타운",
         "license": "장례",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "",
         "address": "전라북도 군산시 서래안1길 11 2층",
         "phone1": "010-5002-4441",
@@ -1429,7 +1615,10 @@
         "area": "전남",
         "title": "전주 하늘",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://전주하늘반려동물장례식장.com",
         "address": "전라북도 완주군 소양면 전진로 1630",
         "phone1": "063-432-0600",
@@ -1452,7 +1641,10 @@
         "area": "전남",
         "title": "해피펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://map.naver.com/p/search/%EC%A0%84%EB%9D%BC%EB%B6%81%EB%8F%84%20%ED%95%B4%ED%94%BC%ED%8E%AB/place/1709044785?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
         "address": "전라북도 완주군 이서면 팥죽이로 205-7",
         "phone1": "063-242-2114",
@@ -1475,7 +1667,10 @@
         "area": "전남",
         "title": "오수 펫 추모공원",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.osupet.com",
         "address": "전라북도 임실군 오수면 춘향로 1554-95",
         "phone1": "063-643-0486",
@@ -1498,7 +1693,10 @@
         "area": "전남",
         "title": "전주 반려동물 장례식장 아리움",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.arium.kr",
         "address": "전라북도 전주시 완산구 콩쥐팥쥐로 1705-44",
         "phone1": "063-223-7942",
@@ -1521,7 +1719,10 @@
         "area": "전남",
         "title": "펫바라기",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://namwonpetbaragi.modoo.at/",
         "address": "전북 남원시 보절면 신파리 403",
         "phone1": "063-625-3737",
@@ -1544,7 +1745,10 @@
         "area": "충남",
         "title": "㈜좋은친구들",
         "license": "장례, 화장",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://goodfriend2012.com",
         "address": "충남 공주시 우성면 보흥2길 36-61",
         "phone1": "041-858-4411",
@@ -1567,7 +1771,10 @@
         "area": "충남",
         "title": "위드엔젤",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.withangel.net",
         "address": "충남 예산군 대슬면 화산리 464-1",
         "phone1": "041-332-8787",
@@ -1590,7 +1797,10 @@
         "area": "충북",
         "title": "21그램 반려동물 장례식장 천안아산점",
         "license": "장례, 화장, 건조, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://21gram.co.kr",
         "address": "충남 천안시 동남구 광풍로 1668",
         "phone1": "1688-1240",
@@ -1613,7 +1823,10 @@
         "area": "충남",
         "title": "굿바이펫",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://goodbyepet.co.kr",
         "address": "충북 제천시 봉양읍 장평로 95",
         "phone1": "043-642-1537",
@@ -1636,7 +1849,10 @@
         "area": "충북",
         "title": "우바스",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.ubas.co.kr",
         "address": "충북 청주시 상당구 신송서원길 120-30",
         "phone1": "1588-6326",
@@ -1659,7 +1875,10 @@
         "area": "충북",
         "title": "리멤버 파크",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.rememberpark.kr",
         "address": "충청남도 논산시 연산면 계백로 2172-13",
         "phone1": "041-735-1700",
@@ -1682,7 +1901,10 @@
         "area": "충북",
         "title": "스마일 어게인",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.smileagain.net",
         "address": "충청북도 영동군 추풍령면 작동1길 81",
         "phone1": "1544-9262",
@@ -1705,7 +1927,10 @@
         "area": "충북",
         "title": "대전 스카이 펫",
         "license": "화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "https://mamresky.modoo.at/",
         "address": "충청북도 옥천군 이원면 이원로 47",
         "phone1": "1588-4476",
@@ -1728,7 +1953,10 @@
         "area": "충북",
         "title": "러블리엔젤",
         "license": "장례, 화장, 봉안",
-        "photo": "../images/down1.png",
+        "photo": {
+            "photo1": "/data/images/down1.png",
+            "photo2": "/data/images/down2.jpg"
+        },
         "homePage": "http://www.lovelyangel.co.kr",
         "address": "충청북도 청주시 서원구 남이면 구미1길 37-47",
         "phone1": "1577-2518",

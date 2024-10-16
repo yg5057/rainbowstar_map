@@ -259,6 +259,7 @@ const ContentsBottom = styled.div`
     justify-content: center;
     align-items: flex-start;
     gap: .4rem;
+    border-radius: 0 0 .6rem .6rem;
 `;
 const TextRow = styled.div`
     width: 100%; 
