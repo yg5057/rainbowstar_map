@@ -60,12 +60,12 @@ const CustomOverlayContent = ({ additionalInfo }) => {
                     </Slider>
                 </ContentsPhoto>
                 <ContentsTop>
-                    <TextRowTable onClick={toggleDetails} style={{ cursor: 'pointer' }}>
+                    <TextRowTableHover onClick={toggleDetails} style={{ cursor: 'pointer' }}>
                         <ParagraphS fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--InfoWindow-conts-title)">
                             상세 정보 보기
                         </ParagraphS>
                         <FontAwesomeIcon icon={faCircleChevronDown} style={{ color: "#375E99", transform: isDetailsVisible ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }} />
-                    </TextRowTable>
+                    </TextRowTableHover>
                 </ContentsTop>
                 <ContentsBottom style={{ maxHeight: isDetailsVisible ? '500px' : '0', overflow: 'hidden', transition: 'max-height 0.3s ease-out' }}>
                     <InfoRow title="평점">{displayInfo(additionalInfo.score)} 점</InfoRow>
@@ -80,13 +80,13 @@ const CustomOverlayContent = ({ additionalInfo }) => {
                     </TextRow>
                     <InfoRow title="주소">{displayInfo(additionalInfo.address)}</InfoRow>
                     <InfoRow title="연락처">{displayInfo(additionalInfo.phone1)}</InfoRow>
-                    <TextRow>
+                    <TextRowNonHover>
                         <div />
                         <Caption fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600">
                             {displayInfo(additionalInfo.phone2)}
                         </Caption>
-                    </TextRow>
-                    <TextRow>
+                    </TextRowNonHover>
+                    <TextRowNonHover>
                         <ParagraphS fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600" color="var(--InfoWindow-conts-title)">
                             장례 가격표
                         </ParagraphS>
@@ -98,8 +98,8 @@ const CustomOverlayContent = ({ additionalInfo }) => {
                                 {displayInfo(additionalInfo.funeralPrice5kg)} 원
                             </Caption>
                         </TextRowTable>
-                    </TextRow>
-                    <TextRow>
+                    </TextRowNonHover>
+                    <TextRowNonHover>
                         <div />
                         <TextRowTable>
                             <Caption fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600">
@@ -109,8 +109,8 @@ const CustomOverlayContent = ({ additionalInfo }) => {
                                 {displayInfo(additionalInfo.funeralPrice15kg)} 원
                             </Caption>
                         </TextRowTable>
-                    </TextRow>
-                    <TextRow>
+                    </TextRowNonHover>
+                    <TextRowNonHover>
                         <div />
                         <TextRowTable>
                             <Caption fontFamily='var(--font-family-primary)' textAlign="left" fontWeight="600">
@@ -120,7 +120,7 @@ const CustomOverlayContent = ({ additionalInfo }) => {
                                 {displayInfo(additionalInfo.funeralPrice1kg)} 원
                             </Caption>
                         </TextRowTable>
-                    </TextRow>
+                    </TextRowNonHover>
                     <TextRow>
                         <div />
                         <TextRowTable onClick={goToPrice} style={{ cursor: 'pointer' }}>
@@ -313,6 +313,33 @@ const TextRow = styled.div`
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
+
+    & > :first-child {
+        width: 8rem; 
+    }
+    & > :nth-child(2) {
+        flex-grow: 1;         
+        flex-shrink: 1;       
+        flex-basis: 0;        
+        word-break: break-all; 
+        overflow-wrap: break-word; 
+        overflow: hidden;      
+        white-space: normal;  
+        min-width: 0;         
+    }
+    &:hover {
+        background: rgba(36, 140, 225, 0.13);
+        border-radius: 0.4rem; 
+    }
+`;
+const TextRowNonHover = styled.div`
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
     & > :first-child {
         width: 8rem; 
     }
@@ -334,6 +361,18 @@ const TextRowTable = styled.div`
     justify-content: space-between;
     align-items: center;
 `
+const TextRowTableHover = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+        background: rgba(36, 140, 225, 0.13);
+        border-radius: 0.4rem; 
+    }
+`
 const TextRowReviewTable = styled.div`
     width: 100%; 
     display: flex;
@@ -341,6 +380,8 @@ const TextRowReviewTable = styled.div`
     justify-content: flex-start;
     text-align: center;
     gap: .8rem;
+    cursor: pointer; 
+
     & > :first-child {
         width: 4rem; 
     }
@@ -354,5 +395,9 @@ const TextRowReviewTable = styled.div`
         white-space: nowrap; 
         min-width: 0;         
         text-overflow: ellipsis;     
+    }
+    &:hover {
+        background: rgba(36, 140, 225, 0.13);
+        border-radius: 0.4rem;
     }
 `
