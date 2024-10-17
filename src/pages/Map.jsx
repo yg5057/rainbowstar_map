@@ -424,7 +424,6 @@ const LoadingOverlay = styled.div`
     z-index: 10; 
     @media (max-width: 768px) {
         padding: 5rem; 
-        gap: 1rem;
     }
 `;
 
