@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+
 import Sidebar from '../components/sidebar/Sidebar';
 import InfoWindowContent from '../components/modal/InfoWindowContent';
 import CustomOverlayContent from '../components/modal/CustomOverlayContent';
+import ParagraphL from '../components/typo/ParagraphL';
+
+
 
 // 마커 이미지
 import pink from '../assets/images/pink.png';
@@ -22,9 +26,9 @@ const Map = () => {
     const [currentOverlay, setCurrentOverlay] = useState(null);
     const [markers, setMarkers] = useState([]);
     const [places, setPlaces] = useState([]);
-
     const [endAddress, setEndAddress] = useState('');
     const [loading, setLoading] = useState(false);
+
     const areaImageMap = {
         '강원': pink, '경기': skyblue, '경남': yellow, '경북': blue, '광주': red, '대구': blue, '부산': yellow, '세종': green, '울산': yellow, '인천': skyblue, '전남': red, '전북': red, '충남': green, '충북': green
     };
@@ -50,15 +54,16 @@ const Map = () => {
 
 
 
-    // 마커 클릭 함수
+
+    // 마커 추가 함수
     const addMarkersFromPlaces = () => {
         if (!geocoder || !map) return;
 
-        // fetch('/data/places.json')
         fetch('/data/places_copy.json')
+            //  fetch('/data/places.json')
             .then(response => response.json())
             .then(data => {
-                setPlaces(data); // places 상태 업데이트
+                setPlaces(data);
                 data.forEach(place => {
                     geocoder.addressSearch(place.address, (result, status) => {
                         if (status === kakao.maps.services.Status.OK) {
@@ -71,63 +76,12 @@ const Map = () => {
                                 title: place.title,
                                 image: markerImage,
                             });
+
                             marker.setMap(map);
                             marker.setClickable(true);
                             marker.kakaoPlaceData = place;
 
-                            kakao.maps.event.addListener(marker, 'click', () => {
-                                if (currentOverlay) {
-                                    currentOverlay.setMap(null);
-                                    setCurrentOverlay(null);
-                                }
-                                setEndAddress(place.address);
-
-                                const additionalInfo = {
-                                    area: place.area,
-                                    title: place.title,
-                                    license: place.license,
-                                    photo: place.photo,
-                                    homePage: place.homePage,
-                                    address: place.address,
-                                    phone1: place.phone1,
-                                    phone2: place.phone2,
-                                    score: place.score,
-                                    funeralPrice5kg: place.funeralPrice5kg,
-                                    funeralPrice15kg: place.funeralPrice15kg,
-                                    funeralPrice1kg: place.funeralPrice1kg,
-                                    funeralPriceUrl: place.funeralPriceUrl,
-                                    funeralSupplies: place.funeralSupplies,
-                                    enshrinementPriceTag: place.enshrinementPriceTag,
-                                    memorialStone: place.memorialStone,
-                                    memorialStonePrice: place.memorialStonePrice,
-                                    review1: place.review1,
-                                    review2: place.review2,
-                                    review3: place.review3,
-                                    url: place.url,
-                                };
-
-                                // 커스텀 오버레이 생성
-                                const overlayContent = document.createElement('div');
-                                ReactDOM.render(
-                                    <CustomOverlayContent
-                                        additionalInfo={additionalInfo}
-                                    />,
-                                    overlayContent
-                                );
-
-                                const customOverlay = new kakao.maps.CustomOverlay({
-                                    position: marker.getPosition(),
-                                    content: overlayContent,
-                                    xAnchor: 0.6,
-                                    yAnchor: 1.15,
-                                    zIndex: 2,
-                                });
-
-                                customOverlay.setMap(map);
-                                setCurrentOverlay(customOverlay);
-                                alert(`도착지 위치가 "${place.title}"으로 선택되었습니다.`);
-                            });
-
+                            kakao.maps.event.addListener(marker, 'click', () => handleMarkerClick(marker, place));
                             setMarkers(prev => [...prev, marker]);
                         }
                     });
@@ -135,6 +89,70 @@ const Map = () => {
             })
             .catch(error => console.error("장소 마커 추가 중 오류 발생:", error));
     };
+
+
+    // 마커 클릭 핸들러 함수
+    const handleMarkerClick = (marker, place) => {
+        addCustomOverlay(marker, place);
+    };
+
+    const addCustomOverlay = (marker, place) => {
+        setEndAddress(place.address);
+
+        const additionalInfo = {
+            area: place.area,
+            title: place.title,
+            license: place.license,
+            photo: place.photo,
+            homePage: place.homePage,
+            address: place.address,
+            phone1: place.phone1,
+            phone2: place.phone2,
+            score: place.score,
+            funeralPrice5kg: place.funeralPrice5kg,
+            funeralPrice15kg: place.funeralPrice15kg,
+            funeralPrice1kg: place.funeralPrice1kg,
+            funeralPriceUrl: place.funeralPriceUrl,
+            funeralSupplies: place.funeralSupplies,
+            enshrinementPriceTag: place.enshrinementPriceTag,
+            memorialStone: place.memorialStone,
+            memorialStonePrice: place.memorialStonePrice,
+            review1: place.review1,
+            review2: place.review2,
+            review3: place.review3,
+            url: place.url,
+        };
+
+        const overlayContent = document.createElement('div');
+        ReactDOM.render(
+            <CustomOverlayContent
+                additionalInfo={additionalInfo}
+            />,
+            overlayContent
+        );
+
+        const customOverlay = new kakao.maps.CustomOverlay({
+            position: marker.getPosition(),
+            content: overlayContent,
+            xAnchor: 0.6,
+            yAnchor: 1.15,
+            zIndex: 2,
+        });
+
+        if (currentOverlay) {
+            currentOverlay.setMap(null);
+        }
+        customOverlay.setMap(map);
+        setCurrentOverlay(customOverlay);
+    };
+
+    useEffect(() => {
+        return () => {
+            if (currentOverlay) {
+                currentOverlay.setMap(null);
+            }
+        };
+    }, [currentOverlay]);
 
 
     useEffect(() => {
@@ -178,7 +196,7 @@ const Map = () => {
                     url: selectedPlace.url,
                 };
 
-                // 커스텀 오버레이 생성
+
                 const overlayContent = document.createElement('div');
                 ReactDOM.render(
                     <CustomOverlayContent
@@ -204,6 +222,7 @@ const Map = () => {
             }
         });
     };
+
 
     // 경로 계산 함수
     const calculateRoute = (startAddress, endAddress) => {
@@ -362,7 +381,9 @@ const Map = () => {
             {loading && (
                 <LoadingOverlay>
                     <Loader />
-                    <span>Loading...</span>
+                    <ParagraphL color='var(--Default-Blue)' fontWeight='600' textAlign='center'>
+                        경로를 찾는 중입니다.
+                    </ParagraphL>
                 </LoadingOverlay>
             )}
         </>
@@ -390,8 +411,10 @@ const LoadingOverlay = styled.div`
     left: 50%; 
     transform: translate(-50%, -50%); 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     width: 100%; 
     height: 100%; 
     padding: 2rem; 
@@ -400,17 +423,18 @@ const LoadingOverlay = styled.div`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10; 
     @media (max-width: 768px) {
-        padding: 5rem; // 모바일에서 패딩 조정
+        padding: 5rem; 
+        gap: 1rem;
     }
 `;
 
 const Loader = styled.div`
-    border: 8px solid rgba(255, 255, 255, 0.3); /* 외부 경계 */
-    border-top: 8px solid #00BFFF; /* 상단 경계 색상 */
+    border: 8px solid rgba(255, 255, 255, 0.3); 
+    border-top: 8px solid var(--Default-Blue);
     border-radius: 50%;
-    width: 50px; /* 원의 너비 */
-    height: 50px; /* 원의 높이 */
-    animation: spin 1s linear infinite; /* 회전 애니메이션 */
+    width: 50px; 
+    height: 50px;
+    animation: spin 1s linear infinite; 
     
     @keyframes spin {
         0% { transform: rotate(0deg); }

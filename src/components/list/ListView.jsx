@@ -31,7 +31,7 @@ const ListView = ({ setEndAddress, searchQuery, showOverlay, setIsOpen }) => {
     const setDestination = (place) => {
         setEndAddress(place.address);
         showOverlay(place.address);
-        alert(`도착지 위치가 "${place.title}"으로 선택되었습니다.`);
+        // alert(`도착지 위치가 "${place.title}"으로 선택되었습니다.`);
 
         if (window.innerWidth <= 480) {
             setIsOpen(false);
